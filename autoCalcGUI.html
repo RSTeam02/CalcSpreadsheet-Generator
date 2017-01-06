@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>
+		CalcSpreadsheet - Generator
+	</title>
+	<meta charset="utf-8">
+	<style>
+		body,
+		pre {
+			font-family: Consolas, monospace
+		}
+		
+		table {
+			border: 1px solid black;
+			border-collapse: collapse;
+			background-color: white;
+		}
+		
+		tr:hover {
+			background: lightgreen;			
+		}
+				
+		td,th {
+			color: black;
+			padding: .2em .2em .2em .2em;
+			cursor: pointer;
+		}
+		
+		
+		#bottom {
+			border-bottom: 1px solid black;
+		}
+		
+		#right {
+			border-right: 1px solid black;
+		}
+		
+		#btmRight {
+			border-bottom: 1px solid black;
+			border-right: 1px solid black;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h2>
+		CalcSpreadsheet - Generator
+	</h2>
+	<form name="autoForm">
+
+		<fieldset>
+			<legend>Select Operation</legend>
+			<input class="radioBtn" type="radio" id="area" name="mode" value="*" checked>a = m * n</input><br>
+			<input class="radioBtn" type="radio" id="perimeter" name="mode" value="2*(+">p = 2 * (m + n)</input><br>
+			<input class="radioBtn" type="radio" id="add" name="mode" value="+">sum = m + n</input><br>
+			<input class="radioBtn" type="radio" id="div" name="mode" value="/">div = m / n</input><br>
+			<input class="radioBtn" type="radio" id="mod" name="mode" value="%">mod = m % n</input><br>
+			<input class="radioBtn" type="radio" id="sub" name="mode" value="-">sub = m - n</input>
+		</fieldset>
+
+		<fieldset>
+			<legend>
+				Check commutativity
+			</legend>
+			<input type="checkbox" id="commCheck"></input>swap m, n
+		</fieldset>
+
+		<fieldset>
+			<legend>Enter Rastersize</legend>
+			<input type="text" onkeydown="if (event.keyCode == 13) {return false;}"  id="input" name="numberM"> e.g. 10x10, 123x456
+			<div id="info"></div>
+		</fieldset>
+
+		HTML-Table: <input type="checkbox" id="cbox" checked>
+		<div id="info"></div>
+		</fieldset>
+		<br>
+		<input type="button" id="generateBtn" value="generate CSV"></input>
+	</form>
+	<br>
+	<div id="elapsed"></div>
+
+	<div id="ahref">
+		<a href="" id="download"></a>
+	</div>
+	<br>
+	<table id="result">
+	</table>
+	<script src="http://requirejs.org/docs/release/1.0.8/minified/require.js" data-main="import/class.js" type="text/javascript"></script>
+
+</body>
+
+</html>
