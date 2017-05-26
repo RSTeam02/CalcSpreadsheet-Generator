@@ -1,9 +1,13 @@
 //commutative? swap operands
 function swapOp(i, j, swap) {
-	let a = i;
-	let b = j;
-	if (swap) {
-		[a, b] = [b, a]
+	let operand = {
+		x: i,
+		y: j
 	}
-	return [a, b];
+	
+	if (swap) {
+		[operand.x, operand.y] = [operand.y, operand.x];
+	}
+
+	return operand;
 }

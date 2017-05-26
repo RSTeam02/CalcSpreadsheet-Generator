@@ -4,6 +4,7 @@ An app that creates a spreadsheet provided as downloadlink and a HTML Table of a
 
 
 User inputs:
++ ui update (jquery): row, column sliders instead of textinputs, every user input leads to an immediate result 
 + select operation
 + swap operands checked or unchecked (t/f)
 + enter a rastersize (mxn)

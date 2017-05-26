@@ -19,31 +19,31 @@ function calc(input) {
     let title = "";
 
     res = `<colgroup>`;
-    for (let i = 0; i <= input[3]; i++) {
+    for (let i = 0; i <= input.col; i++) {
         res += `<col id="col${i}">`;
     }
     res += `</colgroup>`;
 
     res += `<tr>`;
-    for (let i = 0; i <= input[3]; i++) {
+    for (let i = 0; i <= input.col; i++) {
         (i === 0)
-            ? res += `<th align = "right" id = "btmRight">${input[0]}</th>`
+            ? res += `<th align = "right" id = "btmRight">${input.op}</th>`
             : res += `<th align = "right" id = "bottom">${i}</th>`
     }
     res += `</tr>`;
 
-    for (let i = 1; i <= input[2]; i++) {
+    for (let i = 1; i <= input.row; i++) {
         res += `<tr>`;
-        for (let j = 1; j <= input[3]; j++) {
+        for (let j = 1; j <= input.col; j++) {
             if (j === 1) {
                 res += `<th align = "right" id="right">${i}</th>`;
             }
-            val = swapOp(i, j, input[1]);
-            result = mode(input[0], val);
+            val = swapOp(i, j, input.comm);
+            result = mode(input.op, val);
 
-            (input[0] === "2*(+")
-                ? title = `2*(${val[0]}+${val[1]})=${result}`
-                : title = `${val[0]}${input[0]}${val[1]}=${result}`;
+            (input.op === "2*(+")
+                ? title = `2*(${val.x}+${val.y})=${result}`
+                : title = `${val.x}${input.op}${val.y}=${result}`;
             res += `<td class = "classCol${j}" title = ${title} align = "right">${result}</td>`;
         }
         res += `</tr>`;

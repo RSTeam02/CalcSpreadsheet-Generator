@@ -49,36 +49,41 @@
 	<h2>
 		CalcSpreadsheet - Generator
 	</h2>
-	<form name="autoForm">
+	<form>
 
 		<fieldset>
 			<legend>Select Operation</legend>
-			<input class="radioBtn" type="radio" id="area" name="mode" value="*" checked>a = m * n</input><br>
-			<input class="radioBtn" type="radio" id="perimeter" name="mode" value="2*(+">p = 2 * (m + n)</input><br>
-			<input class="radioBtn" type="radio" id="add" name="mode" value="+">sum = m + n</input><br>
-			<input class="radioBtn" type="radio" id="div" name="mode" value="/">div = m / n</input><br>
-			<input class="radioBtn" type="radio" id="mod" name="mode" value="%">mod = m % n</input><br>
-			<input class="radioBtn" type="radio" id="sub" name="mode" value="-">sub = m - n</input>
+			<input class="inputUI" type="radio" id="area" name="mode" value="*" checked>a = m * n</input><br>
+			<input class="inputUI" type="radio" id="perimeter" name="mode" value="2*(+">p = 2 * (m + n)</input><br>
+			<input class="inputUI" type="radio" id="add" name="mode" value="+">sum = m + n</input><br>
+			<input class="inputUI" type="radio" id="div" name="mode" value="/">div = m / n</input><br>
+			<input class="inputUI" type="radio" id="mod" name="mode" value="%">mod = m % n</input><br>
+			<input class="inputUI" type="radio" id="sub" name="mode" value="-">sub = m - n</input>
 		</fieldset>
 
 		<fieldset>
 			<legend>
 				Check commutativity
 			</legend>
-			<input type="checkbox" id="commCheck"></input>swap m, n
+			<input class="inputUI" type="checkbox" id="commCheck"></input>swap m, n
 		</fieldset>
 
 		<fieldset>
-			<legend>Enter Rastersize</legend>
-			<input type="text" onkeydown="if (event.keyCode == 13) {return false;}"  id="input" name="numberM"> e.g. 10x10, 123x456
-			<div id="info"></div>
+			
+			<legend id = "infoRow">Rows</legend>			
+			<input class ="inputUI" type="range" min="2" max="250" value="2" step="2" id="rowSlider" name ="number">
+			
+		</fieldset>
+		<fieldset>
+			<legend id = "infoCol">Columns</legend>			
+			<input class ="inputUI" type="range" min="2" max="250" value="2" step="2" id="colSlider" name ="number">
 		</fieldset>
 
-		HTML-Table: <input type="checkbox" id="cbox" checked>
+	
 		<div id="info"></div>
 		</fieldset>
 		<br>
-		<input type="button" id="generateBtn" value="generate CSV"></input>
+
 	</form>
 	<br>
 	<div id="elapsed"></div>

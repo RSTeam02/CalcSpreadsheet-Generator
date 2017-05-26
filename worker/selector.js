@@ -3,17 +3,17 @@ function mode(select, val) {
 	let expr = 0;
 
 	if (select === "*") {
-		expr = `${val[0] * val[1]}`;
+		expr = `${val.x * val.y}`;
 	} else if (select === "-") {
-		expr = `${val[0] - val[1]}`;
+		expr = `${val.x - val.y}`;
 	} else if (select === "/") {
-		expr = `${Math.floor(val[0] / val[1])}`;
+		expr = `${Math.floor(val.x / val.y)}`;
 	} else if (select === "%") {
-		expr = `${val[0] % val[1]}`;
+		expr = `${val.x % val.y}`;
 	} else if (select === "+") {
-		expr = `${val[0] + val[1]}`;
+		expr = `${val.x + val.y}`;
 	} else {
-		expr = `${2 * (val[0] + val[1])}`;
+		expr = `${2 * (val.x + val.y)}`;
 	}
 
 	return expr;
