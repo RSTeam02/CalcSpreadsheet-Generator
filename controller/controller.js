@@ -15,7 +15,7 @@ export class Controller {
     inputListener() {
 
         $(".inputUI")
-            .on("click keyup", () => {
+            .on("keyup mouseleave touchend", () => {
                 let fWriter = new FileWriter();
                 let res = "";
                 var worker = {
