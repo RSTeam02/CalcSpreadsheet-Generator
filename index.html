@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>
+		CalcSpreadsheet - Generator
+	</title>
+	<meta charset="utf-8">
+	<style>
+		body,
+		pre {
+			font-family: Consolas, monospace
+		}
+		
+		table {
+			border: 1px solid black;
+			border-collapse: collapse;
+			background-color: white;
+		}
+		
+						
+		td,th {
+			color: black;
+			padding: .2em .2em .2em .2em;
+			cursor: pointer;
+		}
+		
+		
+		#bottom {
+			border-bottom: 1px solid black;
+		}
+		
+		#right {
+			border-right: 1px solid black;
+		}
+		
+		#btmRight {
+			border-bottom: 1px solid black;
+			border-right: 1px solid black;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h2>
+		CalcSpreadsheet - Generator
+	</h2>
+	<form>
+
+		<fieldset>
+			<legend>Select Operation</legend>
+			<input class="inputUI" type="radio" id="area" name="mode" value="*" checked>a = m * n</input><br>
+			<input class="inputUI" type="radio" id="perimeter" name="mode" value="2*(+">p = 2 * (m + n)</input><br>
+			<input class="inputUI" type="radio" id="add" name="mode" value="+">sum = m + n</input><br>
+			<input class="inputUI" type="radio" id="div" name="mode" value="/">div = m / n</input><br>
+			<input class="inputUI" type="radio" id="mod" name="mode" value="%">mod = m % n</input><br>
+			<input class="inputUI" type="radio" id="sub" name="mode" value="-">sub = m - n</input>
+		</fieldset>
+
+		<fieldset>
+			<legend>
+				Check commutativity
+			</legend>
+			<input class="inputUI" type="checkbox" id="commCheck"></input>swap m, n
+		</fieldset>
+
+		<fieldset>
+			
+			<legend id = "infoRow">Rows</legend>			
+			<input class ="inputUI" type="range" min="2" max="250" value="2" step="2" id="rowSlider" name ="number">
+			
+		</fieldset>
+		<fieldset>
+			<legend id = "infoCol">Columns</legend>			
+			<input class ="inputUI" type="range" min="2" max="250" value="2" step="2" id="colSlider" name ="number">
+		</fieldset>
+
+	
+		<div id="info"></div>
+		</fieldset>
+		<br>
+
+	</form>
+	<br>
+	<div id="elapsed"></div>
+
+	<div id="ahref">
+		<a href="" id="download"></a>
+	</div>
+	<br>
+	<table id="result">
+	</table>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="main.js" type="module"></script>
+
+</body>
+
+</html>

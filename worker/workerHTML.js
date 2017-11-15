@@ -18,12 +18,6 @@ function calc(input) {
     let result = "";
     let title = "";
 
-    res = `<colgroup>`;
-    for (let i = 0; i <= input.col; i++) {
-        res += `<col id="col${i}">`;
-    }
-    res += `</colgroup>`;
-
     res += `<tr>`;
     for (let i = 0; i <= input.col; i++) {
         (i === 0)
@@ -33,7 +27,7 @@ function calc(input) {
     res += `</tr>`;
 
     for (let i = 1; i <= input.row; i++) {
-        res += `<tr>`;
+        res += `<tr class = "classRow${i}">`;
         for (let j = 1; j <= input.col; j++) {
             if (j === 1) {
                 res += `<th align = "right" id="right">${i}</th>`;

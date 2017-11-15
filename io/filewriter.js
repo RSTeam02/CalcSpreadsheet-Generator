@@ -1,23 +1,20 @@
 
 //class for download as plain text/csv
 
-class FileWriter {
+export class FileWriter {
 
     constructor() {
-        this.fileName = "calcTable.csv";
-        this.link = document.getElementById("download");
-        this.link.innerHTML = "";
+        $("#download").html("");
     }
 
     setContent(input) {
-        this.content = input;
-        this.blob = new Blob([this.content], { type: 'text/plain' });
+        this.blob = new Blob([input], { type: 'text/plain' });
     }
 
     createFile() {
-        this.link.download = this.fileName;
-        this.link.innerHTML = "Download Calc - Table";
-        this.link.href = window.URL.createObjectURL(this.blob);
-        document.getElementById("ahref").appendChild(this.link);
+        $("#download").attr("download", "calcTable.csv");
+        $("#download").html("Download Calc - Table");
+        $("#download").attr('href', window.URL.createObjectURL(this.blob));
+        $("#ahref").append($("#download"));
     }
 }
