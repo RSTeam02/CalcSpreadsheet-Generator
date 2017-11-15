@@ -22,7 +22,7 @@ function calc(input) {
     for (let i = 0; i <= input.col; i++) {
         (i === 0)
             ? res += `<th align = "right" id = "btmRight">${input.op}</th>`
-            : res += `<th align = "right" id = "bottom">${i}</th>`
+            : res += `<th class = "classCol${i}" id="bottom" align = "right">${i}</th>`
     }
     res += `</tr>`;
 
