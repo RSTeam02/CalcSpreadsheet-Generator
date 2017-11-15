@@ -52,7 +52,7 @@ export class Controller {
     markRowCol(row, col) {
         $("td, tr").on("mouseenter touchstart", function () {
             $(`.${$(this).attr("class")}`).css('background-color', 'lightgreen');
-        }).on("mouseleave", function () {
+        }).on("mouseleave touchend", function () {
             $(`.${$(this).attr("class")}`).css('background-color', 'transparent');
         });
     }
