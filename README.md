@@ -3,7 +3,7 @@
 An app that creates a calculation spreadsheet provided as downloadlink and a HTML Table of any binary operations (div, multipy, add, sub, modulo)
 
 test page hosted by github pages:
-
+https://rsteam02.github.io/CalcSpreadsheet-Generator/
 
 + row/col highlighting via jquery
 + using native module instead using external import/export module library
