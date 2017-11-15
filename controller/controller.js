@@ -50,9 +50,9 @@ export class Controller {
 
     //mark rows, columns
     markRowCol(row, col) {
-        $("td, tr").on("mouseover", function () {
+        $("td, tr").on("mouseenter touchstart", function () {
             $(`.${$(this).attr("class")}`).css('background-color', 'lightgreen');
-        }).on("mouseout", function () {
+        }).on("mouseleave", function () {
             $(`.${$(this).attr("class")}`).css('background-color', 'transparent');
         });
     }
